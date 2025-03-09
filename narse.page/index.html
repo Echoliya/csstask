@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=divice-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>护工个人主页</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			.top1 {
+				background-color: #5ac0ce;
+				width: 100%;
+				height: 5.4375rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.return {
+				color: #fff;
+				opacity: 0.9;
+				width: 1.25rem;
+				height: 2.1875rem;
+				margin-left: 2.5rem;
+				position: absolute;
+				left: 0;
+			}
+
+			.grzy {
+				color: #fff;
+				font-size: 1.625rem;
+			}
+
+			.item {
+				position: relative;
+			}
+
+			.head img {
+				position: absolute;
+				width: 10.5rem;
+				height: 10.5rem;
+				margin-top: 3.75rem;
+				margin-left: 1.875rem;
+			}
+
+			.bg img {
+				width: 100%;
+				height: 18.75rem;
+			}
+
+
+			.tp p:first-child {
+				color: #fff;
+				position: absolute;
+				top: 7rem;
+				left: 15rem;
+			}
+
+			.tp p:nth-child(2) {
+				color: #fff;
+				opacity: 0.85;
+				position: absolute;
+				top: 7.6rem;
+				left: 22.5rem;
+			}
+
+			.tp img {
+				position: absolute;
+				top: 11rem;
+				left: 15rem;
+			}
+
+			.tp p:nth-child(4) {
+				color: #fff;
+				opacity: 0.78;
+				position: absolute;
+				top: 10.65rem;
+				left: 17rem;
+			}
+
+			.bottom {
+				position: relative;
+			}
+
+			.top2 {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.top2 p {
+				font-size: 2rem;
+				opacity: 0.9;
+				padding-left: 3.75rem;
+				padding-top: 1rem;
+				margin: 0%;
+			}
+
+			.top2::after {
+				content: '|';
+				position: absolute;
+				font-size: 1.5rem;
+				top: 1.2rem;
+				left: 1.875rem;
+				color: #5ac0ce;
+				opacity: 0.8;
+
+			}
+
+			.divider {
+				border-top: 1px solid #ccc;
+				/* 设置分割线样式 */
+				margin: 20px 0;
+				/* 设置分割线上下间距 */
+				margin-left: 1.875rem;
+				margin-right: 1.875rem;
+			}
+
+			.js1,
+			.js1-1,
+			.js1-2 {
+				display: flex;
+				flex-direction: row;
+				padding-top: 0.6rem;
+				padding-left: 2rem;
+				font-size: 2rem;
+				opacity: 0.8;
+			}
+
+			.img1,
+			.img2 {
+				object-fit: contain;
+				/* 图片原比例放大缩小 */
+			}
+
+			.js1 p {
+				padding-left: 1rem;
+			}
+
+			.js1,
+			.js2,
+			.js3,
+			.js4,
+			.js5 {
+				position: relative;
+			}
+
+			.js1::after {
+				content: '|';
+				position: absolute;
+				font-size: 1.8rem;
+				color: #ccc;
+				opacity: 0.35;
+				top: 1.2rem;
+				left: 11.2rem;
+			}
+
+			.js2,
+			.js3,
+			.js4{
+				display: flex;
+				flex-direction: row;
+				padding-top: 0.6rem;
+				padding-left: 3.5rem;
+				font-size: 2rem;
+				
+			}
+			
+			.js2,.js3,.js4,.js5{
+				opacity: 0.8;
+			}
+			
+			.js5 {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.js5 :first-child {
+				padding-top: 0.6rem;
+				padding-left: 3.5rem;
+				font-size: 2rem;
+				opacity: 0.8;
+			}
+
+			.js5 p:nth-child(2) {
+				position: absolute;
+				display: flex;
+				flex-wrap: wrap;
+				left: 12rem;
+				font-size: 1.5rem;
+				opacity: 0.8;
+				right: 1.875rem;
+			}
+
+			.js2::after,
+			.js3::after,
+			.js4::after,
+			.js5::after{
+				content: '|';
+				position: absolute;
+				font-size: 1.8rem;
+				color: #ccc;
+				opacity: 0.35;
+				top: 0.6rem;
+				left: 12.8rem;
+			}
+			
+			
+			.js2 :first-child,
+			.js3 :first-child,
+			.js4 :first-child,
+			.js5 :first-child {
+				opacity: 0.6;
+			}
+
+			.js2 p:nth-child(2),
+			.js3 p:nth-child(2),
+			.js4 p:nth-child(2),
+			.js5 p:nth-child(2) {
+				padding-left: 3rem;
+			}
+
+			.js4 p:nth-child(2) {
+				color: #e26163;
+			}
+
+			.botton {
+				position: relative;
+			}
+
+			.botton1,
+			.botton2 {
+				border: 1px solid #5ac0ce;
+				border-radius: 0.625rem;
+				font-size: 2.125rem;
+			}
+
+			.botton1 {
+				position: absolute;
+				top: 6.25rem;
+				left: 2rem;
+				color: #5ac0ce;
+				background-color: #fff;
+			}
+
+			.botton2 {
+				position: absolute;
+				top: 6.25rem;
+				right: 2.1875rem;
+				color: #fff;
+				background-color: #5ac0ce;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top1">
+			<div class="return"><img src="img/return.png" alt="" /></div>
+			<div class="grzy">
+				<p>个人主页</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="head"><img src="img/head.png" alt="" /></div>
+			<div class="bg"><img src="img/bg.png" alt="" /></div>
+			<div class="tp">
+				<p style="font-size: 2.25rem;">高素雅</p>
+				<p style="font-size: 1.75rem;">51岁</p>
+				<img src="img/ip.png" alt="" />
+				<p style="font-size: 1.5rem;">北京.通州.果园</p>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="top2">
+				<p>专业技能</p>
+				<!-- <div class="divider"></div> -->
+				<hr style="font-size: 0.5px;opacity: 0.5;margin-top: 2rem;" />
+			</div>
+			<div class="js">
+				<div class="js1">
+					<div class="js1-1">
+						<img src="img/星号.png" class="img1" alt="" />
+						<p>住家</p>
+					</div>
+					<div class="js1-2">
+						<img src="img/星号.png" class="img2" alt="" />
+						<p>不含餐</p>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="js2">
+					<p>从业年限</p>
+					<p>0~3年</p>
+				</div>
+				<div class="divider"></div>
+				<div class="js3">
+					<p>工作时间</p>
+					<p>全天</p>
+				</div>
+				<div class="divider"></div>
+				<div class="js4">
+					<p>服务价格</p>
+					<p>25元/小时</p>
+				</div>
+				<div class="divider"></div>
+				<div class="js5">
+					<p>自我介绍</p>
+					<p>可以洗衣、做饭、照顾老人。在护工方面有5年的经验，经验丰富。</p>
+				</div>
+				<div class="divider"></div>
+				<div class="botton">
+					<input type="button" style="width: 18.75rem;height: 5.625rem;" value="留言" class="botton1">
+					<input type="button" style="width: 18.75rem;height: 5.625rem;" value="电话联系" class="botton2">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
