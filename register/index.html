@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+		<title>登录页面</title>
+		<style>
+			body {
+				background-color: #eff0f4;
+			}
+
+			.head {
+				background-color: #55c0cf;
+				width: 100%;
+				height: 6.25rem;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+				align-items: baseline;
+				color: #fff
+			}
+
+			.lp,
+			.rp {
+				opacity: 0.85;
+				font-size: 1.375rem;
+				;
+			}
+
+			.cp {
+				font-size: 1.625rem;
+			}
+
+			.box1,
+			.box2 {
+				position: relative;
+				width: 100%;
+				height: 6.25rem;
+			}
+
+			.box1 {
+				margin-top: 1rem;
+			}
+
+			.box2 {
+				margin-top: 1rem;
+			}
+
+			.phone,
+			.lock {
+				position: absolute;
+			}
+
+			.phone img,
+			.lock img {
+				margin-top: 1.875rem;
+				margin-left: 2.6875rem;
+			}
+
+			.tel,
+			.psw {
+				position: absolute;
+				color: #000000;
+				opacity: 0.4;
+				font-size: 2rem;
+				border: none;
+				outline: none;
+				margin-top: 2rem;
+				margin-left: 2.5rem;
+			}
+
+			.box1 ::after {
+				content: '|';
+				position: absolute;
+				left: 5.6rem;
+				top: 1.2rem;
+				font-size: 2.4rem;
+				opacity: 0.1;
+			}
+
+			.box2 ::after {
+				content: '|';
+				position: absolute;
+				left: 5.6rem;
+				top: 1.2rem;
+				font-size: 2.4rem;
+				opacity: 0.1;
+			}
+
+			.bottom {
+				background-color: #55c0cf;
+				position: absolute;
+				width: 100%;
+				height: 6.25rem;
+			}
+
+			.bottom p {
+				color: #fff;
+				font-size: 1.625rem;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="head">
+			<div class="lp">
+				<p>关闭</p>
+			</div>
+			<div class="cp">
+				<p>登录</p>
+			</div>
+			<div class="rp">
+				<p>注册</p>
+			</div>
+		</div>
+		<div class="box1" style="background-color: #ffffff;">
+			<div class="phone">
+				<img src="img/phone.png" alt="" />
+				<input type="tel" class="tel" placeholder="请输入手机号码">
+			</div>
+		</div><br />
+		<div class="box2" style="background-color: #fff;">
+			<div class="lock">
+				<img src="img/lock.png" alt="" />
+				<input type="password" class="psw" placeholder="请输入密码" />
+			</div>
+		</div>
+		<br />
+		<div class="bottom">
+			<p>登录</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,mximum-scale=1.0,user-scalable=no" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+		<title></title>
+		<style>
+			* {
+				margin: 0%;
+				padding: 0%;
+				box-sizing: border-box;
+			}
+
+			.body-flex {
+				display: flex;
+				flex-direction: column;
+				height: 100vh;
+			}
+
+			.header {
+				width: 100%;
+				height: 15%;
+				display: flex;
+				flex-direction: column;
+				flex: 0 0 5rem;
+			}
+
+			.button-item {
+				height: 5.5625rem;
+				background-color: #5ac0ce;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 2rem;
+
+			}
+
+			.button-left,
+			.button-right {
+				border-radius: 0.625rem;
+				background-color: #55a8b3;
+				color: #fff;
+				cursor: pointer;
+			}
+
+
+			.active {
+				background-color: #fff;
+				color: #5ac0ce;
+				transform: scale(1.15);
+			}
+
+
+			.button-left,
+			.button-right {
+				width: 8.75rem;
+				height: 4.25rem;
+				border: none;
+				border-radius: 0.625rem;
+			}
+
+			.button-item img {
+				position: absolute;
+				right: 1.875rem;
+			}
+
+			.select {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.main {
+				width: 100%;
+				height: 75%;
+				flex: 1;
+				overflow-y: auto;
+			}
+
+			.divider {
+				border-top: 1px solid #ccc;
+				margin: 0.9375rem 0.9375rem 0 0;
+			}
+
+
+			.text-1,
+			.text-2,
+			.text-3,
+			.text-4,
+			.text-5,
+			.text-6,
+			.text-7{
+				position: relative;
+				height: 11.25rem;
+			}
+
+			.text-1-a,
+			.text-1-b,
+			.text-1-c {
+				float: left;
+			}
+
+			.text-1-d,
+			.text-2-d {
+				float: right;
+			}
+
+			.text-1-a p,
+			.text-1-c p,
+			.text-2-a p,
+			.text-2-c p,
+			.text-3-a p,
+			.text-3-c p,
+			.text-4-a p,
+			.text-4-c p,
+			.text-5-a p,
+			.text-5-c p,
+			.text-6-a p,
+			.text-6-c p,
+			.text-7-a p,
+			.text-7-c p {
+				font-size: 1.875rem;
+				margin: 0%;
+				padding-left: 1rem;
+				opacity: 0.4;
+			}
+
+			.text-1-a img,
+			.text-1-c img,
+			.text-2-a img,
+			.text-2-c img,
+			.text-3-a img,
+			.text-3-c img,
+			.text-4-a img,
+			.text-4-c img,
+			.text-5-a img,
+			.text-5-c img,
+			.text-6-a img,
+			.text-6-c img,
+			.text-7-a img,
+			.text-7-c img {
+				object-fit: contain;
+			}
+
+			.text-1-a,
+			.text-2-a,
+			.text-3-a,
+			.text-4-a,
+			.text-5-a,
+			.text-6-a,
+			.text-7-a {
+				position: absolute;
+				display: flex;
+				flex-direction: row;
+				left: 1.875rem;
+				top: 1.875rem;
+			}
+
+			.text-1-c,
+			.text-2-c,
+			.text-3-c,
+			.text-4-c,
+			.text-5-c,
+			.text-6-c,
+			.text-7-c {
+				position: absolute;
+				display: flex;
+				flex-direction: row;
+				top: 8.125rem;
+				left: 1.875rem;
+			}
+
+			.text-1-b,
+			.text-2-b,
+			.text-3-b,
+			.text-4-b,
+			.text-5-b,
+			.text-6-b,
+			.text-7-b {
+				position: absolute;
+				top: 5rem;
+				left: 4.375rem;
+				font-size: 1.75rem;
+			}
+
+			.text-1-d,
+			.text-2-d,
+			.text-3-d,
+			.text-4-d,
+			.text-5-d,
+			.text-6-d,
+			.text-7-d {
+				display: flex;
+				flex-direction: row;
+				position: absolute;
+				top: 5rem;
+				right: 1.875rem;
+				font-size: 1.875rem;
+				color: #e63b0e;
+			}
+
+			.enter {
+				border: none;
+				background-color: #fff;
+				color: #55a8b3;
+				height: 1.25rem;
+				margin-left: 0.625rem;
+			}
+
+			.text-2-a,
+			.text-2-b,
+			.text-2-c {
+				float: left;
+			}
+
+			.text-2-d {
+				float: right;
+			}
+
+			.text-3-a,
+			.text-3-b,
+			.text-3-c {
+				float: left;
+			}
+
+			.text-3-d {
+				float: right;
+			}
+
+			.text-4-a,
+			.text-4-b,
+			.text-4-c {
+				float: left;
+			}
+
+			.text-4-d {
+				float: right;
+			}
+
+			.text-5-a,
+			.text-5-b,
+			.text-5-c {
+				float: left;
+			}
+
+			.text-5-d {
+				float: right;
+			}
+
+			.text-6-a,
+			.text-6-b,
+			.text-6-c {
+				float: left;
+			}
+
+			.text-6-d {
+				float: right;
+			}
+
+			.text-7-a,
+			.text-7-b,
+			.text-7-c {
+				float: left;
+			}
+
+			.text-7-d {
+				float: right;
+			}
+
+			.footer {
+				width: 100%;
+				height: 10%;
+				background-color: #f8fafb;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				align-items: center;
+				text-align: center;
+			}
+
+			.footer-left {
+				color: #5fc0cd;
+				font-size: 1.25rem;
+			}
+
+			.footer-right {
+				font-size: 1.25rem;
+				color: #999;
+			}
+
+			.footer-left img,
+			.footer-right img {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+
+			.footer-center {
+				position: relative;
+			}
+
+			.footer-top {
+				position: absolute;
+				left: 1.89rem;
+				top: 1.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="body-flex">
+			<div class="header">
+				<div class="button-item">
+					<div class="button">
+						<button class="button-left" onclick="toggleActive(this)">找护工</button>
+						<button class="button-right" onclick="toggleActive(this)">找雇主</button>
+					</div>
+					<img src="img/top-ip.png" alt="" />
+				</div>
+				<div class=select>
+					<select class="form-select form-select-lg" id="sel1" name="sellist1">
+						<option selected>所在地</option>
+						<option value="1">北京</option>
+						<option value="2">上海</option>
+						<option value="3">北京.通州.果园</option>
+					</select>
+					<select class="form-select form-select-lg" id="sel1" name="sellist1">
+						<option selected>食宿</option>
+						<option value="1">吃</option>
+						<option value="2">不吃</option>
+					</select>
+					<select class="form-select form-select-lg" id="sel1" name="sellist1">
+						<option selected>病人情况</option>
+						<option value="1">能自理</option>
+						<option value="2">不能自理</option>
+						<option value="3">半失能</option>
+						<option value="3">手术后</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="main">
+				<div class="text-1">
+					<div class="text-1-a">
+						<img src="img/data.png" alt="" />
+						<p>服务日期</p>
+					</div>
+					<div class="text-1-b">
+						<p>2015-7-5至2015-7-12</p>
+					</div>
+					<div class="text-1-c">
+						<img src="img/ip.png" alt="" />
+						<p>北京.通州.果园</p>
+					</div>
+					<div class="text-1-d">
+						<p>25元/小时</p>
+						<button class="enter">></button>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="text-2">
+					<div class="text-2-a">
+						<img src="img/data.png" alt="" />
+						<p>服务日期</p>
+					</div>
+					<div class="text-2-b">
+						<p>2015-7-5至2015-7-12</p>
+					</div>
+					<div class="text-2-c">
+						<img src="img/ip.png" alt="" />
+						<p>北京.通州.果园</p>
+					</div>
+					<div class="text-2-d">
+						<p>35元/小时</p>
+						<button class="enter">></button>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="text-3">
+					<div class="text-3-a">
+						<img src="img/data.png" alt="" />
+						<p>服务日期</p>
+					</div>
+					<div class="text-3-b">
+						<p>2015-7-5至2015-7-12</p>
+					</div>
+					<div class="text-3-c">
+						<img src="img/ip.png" alt="" />
+						<p>北京.通州.果园</p>
+					</div>
+					<div class="text-3-d">
+						<p>45元/小时</p>
+						<button class="enter">></button>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="text-4">
+					<div class="text-4-a">
+						<img src="img/data.png" alt="" />
+						<p>服务日期</p>
+					</div>
+					<div class="text-4-b">
+						<p>2015-7-5至2015-7-12</p>
+					</div>
+					<div class="text-4-c">
+						<img src="img/ip.png" alt="" />
+						<p>北京.通州.果园</p>
+					</div>
+					<div class="text-4-d">
+						<p>45元/小时</p>
+						<button class="enter">></button>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="text-5">
+					<div class="text-5-a">
+						<img src="img/data.png" alt="" />
+						<p>服务日期</p>
+					</div>
+					<div class="text-5-b">
+						<p>2015-7-5至2015-7-12</p>
+					</div>
+					<div class="text-5-c">
+						<img src="img/ip.png" alt="" />
+						<p>北京.通州.果园</p>
+					</div>
+					<div class="text-5-d">
+						<p>45元/小时</p>
+						<button class="enter">></button>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="text-6">
+					<div class="text-6-a">
+						<img src="img/data.png" alt="" />
+						<p>服务日期</p>
+					</div>
+					<div class="text-6-b">
+						<p>2015-7-5至2015-7-12</p>
+					</div>
+					<div class="text-6-c">
+						<img src="img/ip.png" alt="" />
+						<p>北京.通州.果园</p>
+					</div>
+					<div class="text-6-d">
+						<p>55元/小时</p>
+						<button class="enter">></button>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="text-7">
+					<div class="text-7-a">
+						<img src="img/data.png" alt="" />
+						<p>服务日期</p>
+					</div>
+					<div class="text-7-b">
+						<p>2015-7-5至2015-7-12</p>
+					</div>
+					<div class="text-7-c">
+						<img src="img/ip.png" alt="" />
+						<p>北京.通州.果园</p>
+					</div>
+					<div class="text-7-d">
+						<p>40元/小时</p>
+						<button class="enter">></button>
+					</div>
+				</div>
+				<div class="divider"></div>
+
+			</div>
+
+			<div class="footer">
+				<div class="footer-left">
+					<img src="img/bottom-ip.png" alt="" />
+					<p>首页</p>
+				</div>
+				<div class="footer-center">
+					<img src="img/椭圆 4.png" class="footer-bottom" alt="" />
+					<img src="img/4-1.png" class="footer-top" alt="" />
+				</div>
+				<div class="footer-right">
+					<img src="img/买卖牛人.png" alt="" />
+					<p>我的</p>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script>
+		function toggleActive(element) {
+			element.classList.toggle("active");
+		}
+	</script>
+</html>
